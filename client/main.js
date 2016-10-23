@@ -8,3 +8,11 @@ Template.app.events({
     Meteor.logout();
   }
 });
+
+Template.app.helpers({
+    getAllUsers: function () {
+        return Meteor.users.findOne(
+                {_id: {$ne: Meteor.userId()}}
+        );
+    },
+});
