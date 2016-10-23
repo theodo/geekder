@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var'
 import '../imports/startup/accounts-config.js'
 import './main.html';
 
-Template.app.events({
+Template.homePage.events({
   'click .logout'(event) {
     Meteor.logout();
   }
