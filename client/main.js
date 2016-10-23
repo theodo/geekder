@@ -20,9 +20,9 @@ Template.homePage.events({
 });
 
 Template.app.helpers({
-  getAllUsers: function () {
+  getOneUser: function () {
     return Meteor.users.findOne(
-      {_id: {$ne: Meteor.userId()}}
+      {$and: [{_id: {$ne: Meteor.userId()}}, {_id:{$nin: Meteor.user().profile.match}}, {_id:{$nin: Meteor.user().profile.bash}}]}
     );
   }
 });
