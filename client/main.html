@@ -1,22 +1,20 @@
 <template name="homePage">
-	<head>
-	<title>geekder</title>
-	</head>
+    <head>
+        <title>geekder</title>
+    </head>
 
-	<body>
-
-	<h1>Welcome to Geekder!</h1>
-	{{> yield}}
-	</body>
+    <body>
+        <div class="container">
+            <h1>
+                Welcome to Geekder!
+                <img src="images/tinder.png" width="80">
+                {{> yield}}
+            </h1>
+        </div>
+    </body>
 </template>
 
-<template name="hello">
-  <img src="images/tinder.png">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
 
 <template name="sign-in">
-	{{> atForm}}
+    {{> atForm}}
 </template>
-
