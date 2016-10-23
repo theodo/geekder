@@ -10,9 +10,22 @@ Template.app.events({
 });
 
 Template.app.helpers({
-    getAllUsers: function () {
-        return Meteor.users.findOne(
-                {_id: {$ne: Meteor.userId()}}
-        );
-    },
+  getAllUsers: function () {
+    return Meteor.users.findOne(
+      {_id: {$ne: Meteor.userId()}}
+    );
+  }
+});
+
+Template.profile.events({
+  'submit .edit-profile'(event) {
+
+    event.preventDefault();
+
+    Meteor.users.update(Meteor.userId(), {
+      $set: {
+        'profile.description': event.target.description.value
+      }
+    });
+  }
 });
