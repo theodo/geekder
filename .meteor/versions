@@ -96,5 +96,6 @@ underscore@1.0.9
 url@1.0.10
 useraccounts:bootstrap@1.14.2
 useraccounts:core@1.14.2
+useraccounts:iron-routing@1.14.2
 webapp@1.3.11_1
 webapp-hashing@1.0.9
