@@ -6,6 +6,16 @@ import './main.html';
 Template.homePage.events({
   'click .logout'(event) {
     Meteor.logout();
+  },
+  'click .btn-match'(event) {
+    Meteor.users.update(Meteor.userId(),
+      {$push: {"profile.match": this.matchingUserId}}
+    );
+  },
+  'click .btn-bash'(event) {
+    Meteor.users.update(Meteor.userId(),
+      {$push: {"profile.bash": this.bashingUserId}}
+    );
   }
 });
 
